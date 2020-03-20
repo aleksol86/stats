@@ -21,13 +21,10 @@ public class StatsService {
     }
 
     public int calculateSalesAverage() {
-
         if (sum == 0) {
             calculateSumOfSales();
         }
-
         average = sum / stats.length;
-
         System.out.println("Средняя сумма продаж в месяц " + average);
         return average;
     }
@@ -35,7 +32,6 @@ public class StatsService {
     public int showMonthOfMaxSales() {
         int monthNumber = 1;
         int a = 1;
-
         for (int sales : stats) {
             if (sales >= max) {
                 max = sales;
@@ -43,7 +39,6 @@ public class StatsService {
             }
             a++;
         }
-
         System.out.println("Максимальная продажа " + max + " в месяце " + monthNumber);
         return monthNumber;
     }
@@ -58,7 +53,6 @@ public class StatsService {
             }
             i++;
         }
-
         System.out.println("Минимальные продажи " + min + " были осуществлены в месяце " + monthCount);
         return monthCount;
     }
@@ -67,26 +61,20 @@ public class StatsService {
         if (average == 0) {
             calculateSalesAverage();
         }
-
         int monthQuantity = 0;
-
         for (int sales : stats) {
             if (sales < average) {
                 monthQuantity += 1;
             }
-
         }
-
         System.out.println("Количество месяцев, в которых продажи были ниже среднего: " + monthQuantity);
         return monthQuantity;
-
     }
 
     public int showMonthsQuantityWithSalesAboveAverage() {
         if (average == 0) {
             calculateSalesAverage();
         }
-
         int monthQuantity = 0;
         for (int sales : stats) {
             if (sales > average) {
@@ -94,7 +82,6 @@ public class StatsService {
             }
         }
         System.out.println("Количество месяцев, в которых продажи были выше среднего: " + monthQuantity);
-
         return monthQuantity;
     }
 }
